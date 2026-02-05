@@ -1,7 +1,13 @@
 [package]
 name = "tt2-climb-the-tower"
+description = "Simple pathfinding program for Tap Titans 2 \"Climb the Tower\" event"
 version = "1.0.0"
 edition = "2024"
+license = "MIT"
+repository = "https://github.com/Dimitri-chln/tt2-climb-the-tower"
+readme = "README.md"
+categories = ["algorithms", "command-line-utilities"]
+keywords = ["tt2", "event", "tower", "optimizer"]
 
 [dependencies]
 clap = { version = "4.5.53", features = ["derive"] }
