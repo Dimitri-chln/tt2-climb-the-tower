@@ -26,11 +26,16 @@ fn optimize(command: Command) -> Result<(), Error> {
         None => optimizer.highest_floor(command.start_floor),
     };
 
+    let max_digits = reached_floor.checked_ilog10().unwrap_or(0) as usize + 1;
+
     println!("Reached floor {reached_floor} with a cost of {cost}.",);
     println!("Optimal path from floor {start_floor} to floor {reached_floor}:",);
 
     for (floor_number, door) in path {
-        println!("Floor {floor_number:0>3} > {door:?} door");
+        println!(
+            "Floor {floor_number:0>width$} > {door:?} door",
+            width = max_digits
+        );
     }
 
     Ok(())
